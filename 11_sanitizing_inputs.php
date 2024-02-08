@@ -1,6 +1,7 @@
 <?php
 
-$username = $_REQUEST['username'];
+$username = htmlspecialchars($_REQUEST['username']);
+
 
 echo $username; // de input van de gebruiker wordt getoond én uitgevoerd
 
@@ -17,7 +18,7 @@ echo $username; // de input van de gebruiker wordt getoond én uitgevoerd
 
 <body>
 
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
         <div>
             <label>Username: </label>
             <input type="text" name="username">
